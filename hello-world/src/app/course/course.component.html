@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>{{title |summary:'5'}}</h1>
+  <app-star></app-star>
+  
+  <h3>{{courses.length}} courses</h3>
+  
+  <ul list-group list-group-flush>
+    <li *ngFor="let course of courses">
+      <div class="card">
+        <div class="card-block">
+          <div class="card-title">  Title {{course.title |uppercase}}</div>
+          <div class="card-text">
+            <div>Rating {{course.rating | number:'1.2-2'}}</div>
+            <div># Students {{course.students | number}}</div>
+            <div>Price {{course.price | currency:'USD':true:'3.2-2'}}</div>
+            <div>Release Date {{course.releaseDate |date:'longDate'}}</div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+
+  <!--
+  <input type="text" [(ngModel)]="newCourse" (keyup.enter)="onKeyUp()" />
+  <ul>
+    <li *ngFor="let course of courses" #cr>{{course}}
+      <span class="btn btn-danger" (click)="onDelete(cr.value)">x</span>
+    </li>
+  </ul>
+-->
+</div>
