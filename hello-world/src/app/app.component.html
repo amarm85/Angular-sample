@@ -1,10 +1,66 @@
-<h1>This is from App component</h1>
+<app-signup-form></app-signup-form>
+
+<!-- <app-contact-form></app-contact-form> -->
+
+<!-- <zippy [title]="ShippingDetails">
+	<ng-container class="body">This contains Shipping Information</ng-container>
+</zippy>
+
+<zippy title="Billing Details">
+	<ng-container class="body">This contains billing information</ng-container>
+
+</zippy>
+ -->
+<!-- <h1>This is from App component</h1>
+
+<input type="text" [appInputFormat]="'lowercase'">
+
+<span > {{task.assignee?.name}}</span>
+
+<button class="btn btn-primary" (click)="onAdd()">Add course </button>
+<button class="btn btn-success" (click)="onLoad()"> Load Courses</button>
+<ul *ngFor="let course of courses ; index as i even as e; trackBy:trackCourse">
+
+	<li>{{i}} {{course.name}} <span *ngIf="e"> Even</span></li> 
+</ul>
+
+
+<ul class="nav nav-pills">
+	<li [class.active]="viewMode == 'map'"><a (click)="viewMode='map'">Map View</a></li>
+	<li [class.active]="viewMode == 'list'"><a (click)="viewMode='list'">List View</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+	<div *ngSwitchCase="'map'">Map View Content</div>
+	<div *ngSwitchCase="'list'">List View Content</div>
+	<div *ngSwitchDefault> Otherwise</div>
+</div>
+
+
+
+<div [hidden]="!(courses.length > 0)">
+	<h3> List of Courses </h3>
+</div>
+
+<div [hidden]="(courses.length > 0)">
+	<h3> No Courses Yet </h3>
+</div>
+
+<div *ngIf="courses.length > 0 ; then listofcourses else nocourese"></div>
+
+<ng-template #listofcourses> List of courses... </ng-template>
+
+<ng-template #nocourese> No courses yet </ng-template>
+
+
+
+<app-likes [numberOfLikes]="twite.numberOfLikes" [isLiked]="twite.isliked" ></app-likes>
+
 
 <app-favorite [isFavorite]="post.isFavorite"
      (change)="onFavoriteChange($event)">
 
      <ng-container class="heading">This is Heading</ng-container>
      <div class="body">This is Body.</div>
-</app-favorite>
-
-<app-likes [numberOfLikes]="twite.numberOfLikes" [isLiked]="twite.isliked" ></app-likes>
+     </app-favorite>
+ -->

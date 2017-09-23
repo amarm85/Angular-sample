@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+	<div class="panel-heading" (click)="isBodyHidden = !isBodyHidden">
+		{{title}}		
+		 <span class="pull-right glyphicon"
+			[ngClass]="{
+		'glyphicon-chevron-down':isBodyHidden,
+		'glyphicon-chevron-up':!isBodyHidden
+	}"></span>
+	</div>
+	<div class="panel-body" [class.hidden]="isBodyHidden">
+		<ng-content select=".body"></ng-content>
+	</div>
+
+</div>
+

@@ -1,0 +1,102 @@
+<form #f="ngForm" (ngSubmit)="submit(f.value)">
+	<div class="form-group">
+		<label for="courseName">Course Name</label> <input required
+			minlength="5" ngModel #courseName="ngModel" name="courseName"
+			id="courseName" type="text" class="form-control">
+		<div class="alert alert-danger"
+			*ngIf="courseName.touched &amp;&amp; !courseName.valid  ">
+			<div *ngIf="courseName.errors.required">Name is  required</div>
+			<div *ngIf="courseName.errors.minlength">Name should be minimum
+				{{courseName.errors.minlength.requiredLength}} charaters</div>
+
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="category">Category </label>
+		 <select required ngModel name="category" #category="ngModel"
+			id="category" class="form-control"> 
+				<option value=""></option>
+				<option *ngFor="let category of categories" [ngValue]="category"> {{category.name}}</option>
+		</select>
+		<div *ngIf="category.touched && category.invalid" class="alert alert-danger" >Category is Required</div>
+		
+	</div>
+		
+	<div class="checkbox">
+		<label >
+			<input ngModel name="hasGarantee"  id="hasGarantee" type="checkbox" > 30-Days Money Back Guarantee
+			</label>
+		
+	</div>
+	
+	<button class="btn btn-success"  [disabled]="!f.valid">Create</button>
+
+
+</form>
+
+{{f.value|json}}
+
+<!--  
+<form #f="ngForm" (ngSubmit)="submit(f)">
+
+	<div ngModelGroup="contact">
+
+		<div class="form-group">
+			<label for="firstName">First Name</label>
+			 <input required
+				minlength="3" maxlength="10" pattern="banana" #firstName="ngModel"
+				ngModel name="firstName" id="firstName" type="text"
+				class="form-control">
+
+			<div class="alert alert-danger"
+				*ngIf="firstName.touched && !firstName.valid">
+				<div *ngIf="firstName.errors.required">First Name is required</div>
+				<div *ngIf="firstName.errors.minlength">First name should be
+					minimum {{firstName.errors.minlength.requiredLength}} chars</div>
+				<div *ngIf="firstName.errors.pattern">First name does not
+					match the pattern</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="form-group">
+		<label for="comment">Comment</label>
+		<textarea ngModel name="comment" id="comment" cols="30" rows="5"
+			class="form-control"></textarea>
+	</div>
+
+	<div class="checkbox">
+		<label ><input type="checkbox" ngModel name="isSubscribe"> Subscribe</label>
+		
+	</div>
+		
+	<div class="form-group">
+		<label for="contactMethod">
+			<select multiple ngModel name="contactMethod"  id="contactMethod" class="form-control">
+				<option value=""></option>
+				<option *ngFor="let method of contactMethods"  [ngValue]="method"> {{method.name}}</option>
+			</select>
+		</label>
+	</div>	
+	
+	<div *ngFor="let method of contactMethods" class="form-group">
+		<label>
+			<input ngModel type="radio" name="checkContact"  [value]="method.id">
+			{{method.name}}
+		</label>
+	
+	</div>
+
+	
+	<p>
+		{{f.value|json}}
+	</p>
+	
+	<button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+
+</form>
+
+-->
