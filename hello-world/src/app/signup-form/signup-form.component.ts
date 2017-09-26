@@ -1,5 +1,6 @@
+import { UserNameValidators } from './username.validators';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup-form',
@@ -8,20 +9,40 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class SignupFormComponent implements OnInit {
 
+  form = new FormGroup({
+    account: new FormGroup({
+      username: new FormControl('',
+        [Validators.required, Validators.minLength(3)],
+        UserNameValidators.shouldBeUnique),
+      password: new FormControl('', UserNameValidators.connotContainSpace)
+    })
+  });
+
   constructor() { }
 
   ngOnInit() {
   }
-    
-   form = new FormGroup({
-    'username':new FormControl('',[Validators.required, Validators.minLength(3)]),    
-     'password': new FormControl('',Validators.required)  
-   
-   }); 
-    
-    get username(){return this.form.get('username');}
-    get password(){return this.form.get('password');}
-    
-    
+
+  get username() {
+
+    return this.form.get('account.username');
+  }
+
+  get password() {
+    return this.form.get('account.password');
+  }
+
+  log(username) {
+    console.log(username);
+
+  }
+
+  login() {
+    this.form.setErrors({
+      invalidLogin: true
+    });
+    console.log(this.form.value);
+
+  }
 
 }
