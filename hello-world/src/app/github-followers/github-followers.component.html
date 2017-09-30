@@ -9,7 +9,7 @@
       </div>
       <div class="column col-xs-10">
         <h3>{{follower.login}}</h3>
-        <a [routerLink]="['/followers',follower.login]">{{follower.html_url}}</a>
+        <a [routerLink]="['/followers',follower.id,follower.login]">{{follower.html_url}}</a>
         
       </div>
 
