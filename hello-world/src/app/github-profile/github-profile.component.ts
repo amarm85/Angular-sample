@@ -8,8 +8,8 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class GithubProfileComponent implements OnInit {
 
-    private username: string;
-    private id: number;
+    username: string;
+     id: number;
 
     constructor(private activatedRoute: ActivatedRoute, private router: Router ) { }
 

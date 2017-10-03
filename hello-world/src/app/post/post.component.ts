@@ -13,8 +13,8 @@ import { Component, OnInit } from '@angular/core';
 export class PostComponent implements OnInit {
 
   posts: any[];
-  private error: any;
-  private errorMessage = 'An unexpected error happened';
+   error: any;
+   errorMessage = 'An unexpected error happened';
 
   constructor(private postService: PostService) {
   }

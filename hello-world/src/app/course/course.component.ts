@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
-  private title = 'List of Courses';
-  private courses;
+title = 'List of Courses';
+   courses: any;
   isActive = false;
   private newCourse = 'Add new Course';
 
